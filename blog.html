@@ -56,34 +56,16 @@
                         Projects
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="project.html">Project</a>
-                        <a class="dropdown-item" href="project-details.html">Project Details</a>
+                        <a class="dropdown-item" href="project.html">Projects</a>
+                        <a class="dropdown-item" href="project-details.html">Use-Case Studies</a>
                     </div>
                 </div>
             </li>
             <li>
-                <a href="team.html">Team</a>
+                <a href="team.html">Team Techweirdo</a>
             </li>
             <li>
-                <div class="dropdown">
-                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-                        Pages
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="elements.html">Elements</a>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="dropdown">
-                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-                        Blog
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="blog.html">Blog</a>
-                        <a class="dropdown-item" href="single-blog.html">Blog Details</a>
-                    </div>
-                </div>
+                <a href="blog.html">Blog</a>
             </li>
             <li>
                 <a href="contact.html">Contact</a>
@@ -147,37 +129,42 @@
     <section class="blog_area section-gap">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-12">
                     <div class="blog_left_sidebar">
                         <article class="row blog_item">
                             <div class="col-md-3">
-                                <!-- <div class="blog_info text-right">
-                                    <div class="post_tag">
-                                        <a href="#">Food,</a>
-                                        <a class="active" href="#">Technology,</a>
-                                        <a href="#">Politics,</a>
-                                        <a href="#">Lifestyle</a>
-                                    </div>
-                                    <ul class="blog_meta list">
-                                        <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#">12 Dec, 2017<i class="lnr lnr-calendar-full"></i></a></li>
-                                        <li><a href="#">1.2M Views<i class="lnr lnr-eye"></i></a></li>
-                                        <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                                    </ul>
-                                </div> -->
+                                <div class="blog_info text-right">
+                                    <script id="" type="text/x-handlebars-template">
+                                        {{#each Post}}
+                                        <div class="post_tag">
+                                            <a>{{this.virtuals.tags.slug}}, </a>
+                                            <!-- <a class="active" href="#">Technology,</a> -->
+                                            <!-- <a href="#">Politics,</a> -->
+                                            <!-- <a href="#">Lifestyle</a> -->
+                                        </div>
+                                        <ul class="blog_meta list">
+                                            <!-- <li><a href="#">Mark wiens<i class="lnr lnr-user"></i></a></li> -->
+                                            <li><a>{{this.firstPublishedAt}}<i class="lnr lnr-calendar-full"></i></a></li>
+                                            <li><a>{{this.virtuals.topics.totalClapCount}}<i class="lnr lnr-eye"></i></a></li>
+                                            <!-- <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li> -->
+                                        </ul>
+                                        {{/each}}
+                                    </script>
+                                </div>
                             </div>
                             <div class="col-md-9">
                                 <div class="blog_post">
-                                    <!-- <img src="img/blog/main-blog/m-blog-1.jpg" alt=""> -->
                                     <div class="blog_details">
                                         <div id="blogs-container"></div>
                                         <script id="blogsTemplate" type="text/x-handlebars-template">
                                             {{#each Post}}
+                                            <img src="https://cdn-images-1.medium.com/max/1000/{{this.virtuals.previewImage.imageId}}" alt=""><br>
                                             <!-- <h1>{{@key}}</h1> -->
-                                                <h2>{{title}}</h2>
-                                                 <p>{{this.content.subtitle}}</p>
-                                                <h5>{{this.createdAt}}</h5>
-                                                <a href="" class="blog_btn">Read More</a>
+                                            <a href="https://medium.com/story/{{this.uniqueSlug}}"><h2>{{title}}</h2></a>
+                                             <p>{{this.content.subtitle}}</p><br>
+                                            <!-- <h5>{{this.createdAt}}</h5> -->
+                                            <a href="https://medium.com/story/{{this.uniqueSlug}}" class="blog_btn">Read More</a>
+                                            <br><br><br>
                                             {{/each}}
                                         </script>
                                         <!-- <a href="single-blog.html">

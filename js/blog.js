@@ -67,11 +67,23 @@ feedmirror.initialize(fmSettings);
 function createHTML(blogData) {
   console.log("testing..");
   console.log(blogData);
-
+  // Template.registerHelper("date", function(timestamp) {
+  //   var curr_date = timestamp.getDate();
+  //   var curr_month = timestamp.getMonth();
+  //   curr_month++;
+  //   var curr_year = timestamp.getFullYear();
+  //   result = curr_date + ". " + curr_month + ". " + curr_year;
+  //   return result;
+  // });
   var rowTamplate = document.getElementById("blogsTemplate").innerHTML;
+  // var dataTamplate = document.getElementById("blogSubViews").innerHTML;
   var compiledTamplate = Handlebars.compile(rowTamplate);
+  // var viewDataTamplate = Handlebars.compile(dataTamplate);
   var ourGeneratedHTML = compiledTamplate(blogData);
+  // ourGeneratedHTML = ourGeneratedHTML + viewDataTamplate(blogData);
 
   var blogsContainer = document.getElementById("blogs-container");
   blogsContainer.innerHTML = ourGeneratedHTML;
+  // var blogsSideContainer = document.getElementById("blogsViews");
+  // blogsSideContainer.innerHTML = ourGeneratedHTML;
 }
