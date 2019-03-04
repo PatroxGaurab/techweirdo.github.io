@@ -2738,7 +2738,9 @@ h6 {
   .single-testi-item .author-title .thumb {
     display: inline-block; }
     .single-testi-item .author-title .thumb img {
-      margin-top: -25px; }
+      margin-top: -25px;
+    height: 50px;
+  width: 50px; }
   .single-testi-item .author-title .a-desc {
     display: inline-block;
     padding-left: 15px;
